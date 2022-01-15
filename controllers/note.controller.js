@@ -64,6 +64,29 @@ exports.findOne = (req, res) => {
     });
 };
 
+// Find a single note with a value
+exports.findSlug = (req, res) => {
+  Note.find({ slug: req.params.slug })
+    .then((note) => {
+      if (!note) {
+        return res.status(404).send({
+          message: 'Note not found with slug ' + req.params.slug,
+        });
+      }
+      res.send(note);
+    })
+    .catch((err) => {
+      if (err.kind === 'ObjectSlug') {
+        return res.status(404).send({
+          message: 'Note not found with slug ' + req.params.slug,
+        });
+      }
+      return res.status(500).send({
+        message: 'Error retrieving note with slug ' + req.params.slug,
+      });
+    });
+};
+
 // Update a note identified by the id in the request
 exports.update = (req, res) => {
   // Validate Request

@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 //Initialize
 //mongoose.plugin(slug);
 
-const ModelSchema = mongoose.Schema(
+const Schema = mongoose.Schema(
   {
     title: String,
     content: String,
@@ -15,5 +15,5 @@ const ModelSchema = mongoose.Schema(
   }
 );
 
-const NameCollection = 'note';
-module.exports = mongoose.model('note', ModelSchema, NameCollection);
+const Collection = 'commentmeta';
+module.exports = mongoose.model('Commentmeta', Schema, Collection);

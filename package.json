@@ -26,13 +26,10 @@
   },
   "homepage": "https://github.com/asepready/express-api#readme",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.1",
-    "cross-env": "^7.0.3",
     "express": "^4.17.2",
-    "express-validator": "^6.14.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.1.6"
+    "mongoose": "^6.1.6",
+    "mongoose-slug-generator": "^1.0.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

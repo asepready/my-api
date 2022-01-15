@@ -10,6 +10,9 @@ module.exports = (app) => {
   // Retrieve a single Note with id
   app.get('/notes/:id', notes.findOne);
 
+  // Retrieve a single Note with id
+  app.get('/notes/:slug', notes.findSlug);
+
   // Update a Note with id
   app.patch('/notes/:id', notes.update);
 
